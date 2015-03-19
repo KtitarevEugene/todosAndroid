@@ -1,0 +1,19 @@
+"#secondWnd": {
+	backgroundColor: "white"
+}
+
+"#listTodoTpl": {
+	
+}
+
+"#typeTodo": {
+	width:"30",
+	height:"30",
+	left:"10" 
+}
+
+"#openTodo": {
+	 width:"30",
+	 height:"30",
+	 right:"10"
+}

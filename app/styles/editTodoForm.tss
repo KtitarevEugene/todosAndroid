@@ -1,0 +1,81 @@
+"#thirdWnd": {
+	 backgroundColor:"#C6E2FF"  
+}
+
+"#descrField": {
+	borderRadius:"8",
+	color:"#fff",
+	textAlign:"left",
+	color:"black",
+	width:"95%",
+	height:"100",
+	maxLength:"255",
+	top:"10",
+	hintText:"Description"
+}
+
+".label": {
+	color:"black",
+	width:"30%",
+	height:"30",
+	backgroundColor:"#DCDCDC"
+}
+
+"#content": {
+	top:"10",
+	backgroundColor:"#fff",
+	width:"95%",
+	borderRadius:"8",
+	height:"90"
+}
+
+".textFieldView": {
+	width:"70%",
+	backgroundColor:"#fff",
+	height:"30",
+	borderWidth:"1",
+	borderColor:"#DCDCDC"
+}
+
+"#date": {
+	width:"95%"
+}
+
+"#type": {
+	width:"50%" 
+}
+
+"#status": {
+	width:"50%"
+}
+
+"#selectType": {
+	
+}
+
+"#selectStatus": {
+	
+}
+
+".blank": {
+	width:"50",
+	left:"7.5%",
+	height:"50",
+	image: "/blank.png",
+}
+
+"#whiteColor": {
+	backgroundColor: "#fff"
+}
+
+"#yellowColor": {
+	backgroundColor: "#fdfcb5"
+}
+
+"#redColor": {
+	backgroundColor: "#ffc3a3"
+}
+
+"#blueColor": {
+	backgroundColor: "#a6cefc"	
+}

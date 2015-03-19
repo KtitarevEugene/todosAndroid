@@ -1,0 +1,36 @@
+<Alloy>
+	<Collection src='Project' />
+	<TabGroup id='tabGroup' onOpen="onOpen">
+		<ActionBar title="Projects"></ActionBar>
+		<Tab id='mainTab' title='TODOs'>
+			<Window id='firstWnd' title='Projects'>			   
+			   <RightNavButton platform='ios'>
+			   	  <Button title='Add' onClick='openAddDialog' />
+			   </RightNavButton>
+			   <ListView defaultItemTemplate="projectItemTpl" onItemclick="showTodoList">
+			   	   <Templates>
+					   <ItemTemplate name="projectItemTpl" id="listProjectTpl">
+					     <View>
+					        <Label id="name" bindId="projectName" />  
+					        <ImageView />
+					     </View>
+					  </ItemTemplate>
+			   	   </Templates>
+		          <ListSection dataCollection='Project'>
+		             <ListItem itemId='{id}' projectName:text='{projectName}' />
+		          </ListSection>
+		       </ListView>
+		   </Window>
+		</Tab>
+		<Tab id='aboutTab' title='About'>
+			<Window id='aboutWnd' title='About' layout="vertical">
+				<View layout="vertical" top="35%">
+		        	<Label id="app" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">TODOs Application</Label>
+		        	<Label id="version" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Version: 2.1.0</Label>
+		        	<Label id="site" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="www.smartru.com" onClick="openSite" />
+		        	<View id="underline" onClick="openSite"></View>
+				</View>
+			</Window>
+		</Tab>
+	</TabGroup>
+</Alloy>

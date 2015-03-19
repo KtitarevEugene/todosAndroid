@@ -1,0 +1,71 @@
+"#tabGroup": {
+	
+}
+
+"#mainTab": {
+	icon:"Bug.png"
+}
+
+"#firstWnd": {
+	backgroundColor: "white"
+}
+
+"#wndTitle": {
+	width:"80%"
+}
+
+"#listProjectTpl": {
+	
+}
+
+"#name": {
+	color:"black",
+	width:"80%",
+	left:"15",
+	minimumFontSize:"1000dip",
+	ellipsize:"true"
+}
+
+"ImageView": {
+	width:"30",
+	height:"30",
+	right:"10",
+	image:"/open.png" 
+}
+
+"#aboutTab": {
+	icon:"info.png"
+}
+
+"#aboutWnd": {
+	backgroundColor:"white",
+	backgroundGradient: {
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint: { x: '50%', y: '100%' },
+        colors: [ { color: 'a1cbe9', offset: 0.0}, { color: '458bbd', offset: 1.0 } ],
+    }
+}
+
+"#app": {
+	color: "#fff",
+	shadowColor:'#000',
+    shadowOffset:{x:0,y:1},
+	font:{fontSize:24,fontFamily:'Lucida Grande-Bold'},
+}
+
+"#version": {
+	color: "#fff",
+	shadowColor:'#000',
+	shadowOffset:{x:0,y:1},
+}
+
+"#site": {
+	color: "#000",
+}
+
+"#underline": {
+	height:"1",
+	backgroundColor: "#000",
+	width:"140"
+}

@@ -1,0 +1,22 @@
+<Alloy>
+	<Collection src='Todo' />
+	<Window id='secondWnd' title='TODOs'>
+	   <RightNavButton platform='ios'>
+	   	  <Button title='Edit' onClick='openEditDialog' />
+	   </RightNavButton>
+	   <ListView defaultItemTemplate="todoItemTpl" onItemclick="showEditTodoForm">
+	   	   <Templates>
+			   <ItemTemplate name="todoItemTpl" id="listTodoTpl">
+			     <View bindId="background">
+			        <ImageView id="typeTodo" bindId="todoType" />
+			        <Label bindId="todoDescription" color="black" width="80%" minimumFontSize="1000dip" left="45" ellipsize="true" />  
+			        <ImageView id="openTodo" image="/open.png" />
+			     </View>
+			  </ItemTemplate>
+	   	   </Templates>
+  	      <ListSection dataCollection='Todo'>
+	         <ListItem itemId='{id}' background:backgroundColor="{color}" todoType:image="{type}" todoDescription:text='{description}' />
+	      </ListSection>
+	   </ListView>
+	</Window>
+</Alloy>
