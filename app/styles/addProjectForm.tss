@@ -16,5 +16,6 @@
 }
 
 "Button": {
-	bottom:"5"
+	width:"90%",
+	top:"10"
 }

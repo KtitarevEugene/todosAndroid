@@ -8,9 +8,13 @@
 	   	   <Templates>
 			   <ItemTemplate name="todoItemTpl" id="listTodoTpl">
 			     <View bindId="background" layout="horizontal">
-			        <ImageView id="typeTodo" bindId="todoType" />
-			        <Label id="descrTpl" wordWrap="false" bindId="todoDescription" />  
-			        <ImageView id="openTodo" image="open.png" />
+			        <View id="textFrame" layout="horizontal" borderWidth="1" borderColor="#fff">
+				        <ImageView id="typeTodo" bindId="todoType" />
+			        	<Label id="descrTpl" wordWrap="false" bindId="todoDescription" />  
+			        </View>
+			        <View id="iconFrame" width="Ti.UI.FILL" borderWidth="1" borderColor="#fff">
+				        <ImageView id="openTodo" image="open.png" />
+			        </View>
 			     </View>
 			  </ItemTemplate>
 	   	   </Templates>

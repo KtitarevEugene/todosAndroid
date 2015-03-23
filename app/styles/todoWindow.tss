@@ -6,11 +6,19 @@
 	
 }
 
+"#textFrame": {
+	width: "95%"
+}
+
+"#iconFrame": {
+	
+}
+
 "#descrTpl": {
 	color:"black",
 	height: "30",
 	minimumFontSize:"1000dip",
-	left:"45",
+	left:"5",
 	ellipsize:"true",
 	font:{
 		fontSize: 20
@@ -26,4 +34,5 @@
 "#openTodo": {
 	 width:"30",
 	 height:"30",
+	 right:"5"
 }
