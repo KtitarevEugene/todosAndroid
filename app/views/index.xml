@@ -1,25 +1,8 @@
 <Alloy>
-	<Collection src='Project' />
-	<TabGroup id='tabGroup' onOpen="onOpen">
-		<ActionBar title="Projects"></ActionBar>
+	<TabGroup id='tabGroup'>
 		<Tab id='mainTab' title='TODOs'>
-			<Window id='firstWnd' title='Projects'>			   
-			   <RightNavButton platform='ios'>
-			   	  <Button title='Add' onClick='openAddDialog' />
-			   </RightNavButton>
-			   <ListView defaultItemTemplate="projectItemTpl" onItemclick="showTodoList">
-			   	   <Templates>
-					   <ItemTemplate name="projectItemTpl" id="listProjectTpl">
-					     <View>
-					        <Label id="name" bindId="projectName" />  
-					        <ImageView />
-					     </View>
-					  </ItemTemplate>
-			   	   </Templates>
-		          <ListSection dataCollection='Project'>
-		             <ListItem itemId='{id}' projectName:text='{projectName}' />
-		          </ListSection>
-		       </ListView>
+			<Window>			   
+				<Widget id="navigationView" src="PagedWidget"></Widget>
 		   </Window>
 		</Tab>
 		<Tab id='aboutTab' title='About'>

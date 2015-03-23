@@ -1,9 +1,9 @@
 <Alloy>
-	<Window id="thirdWnd" layout="vertical">
-		<RightNavButtons platform='ios'>
-	   		<Button title='Save' onClick="saveRecord" />
-	   		<Button title='Remove' onClick="removeRecord" />
-  	    </RightNavButtons>
+	<View id="thirdWnd" layout="vertical">
+		<View id="controls">
+			<Button title='Save' onClick="saveRecord" />
+			<Button title='Remove' onClick="removeRecord" />
+		</View>
         <TextArea id="descrField" />
         <View id="content" layout="vertical">
 	        <View layout="horizontal">
@@ -45,5 +45,5 @@
     		<ImageView class="blank" id="redColor" onClick="setTodoColor" />
     		<ImageView class="blank" id="blueColor" onClick="setTodoColor" />
     	</View>
-	</Window>
+	</View>
 </Alloy>

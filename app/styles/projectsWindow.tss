@@ -1,29 +1,25 @@
-"#secondWnd": {
+"#firstWnd": {
 	backgroundColor: "white"
 }
 
-"#listTodoTpl": {
+"#listProjectTpl": {
 	
 }
 
-"#descrTpl": {
+"#name": {
 	color:"black",
-	height: "30",
+	width:"80%",
+	left:"15",
 	minimumFontSize:"1000dip",
-	left:"45",
 	ellipsize:"true",
 	font:{
 		fontSize: 20
 	}
 }
 
-"#typeTodo": {
+"ImageView": {
 	width:"30",
 	height:"30",
-	left:"10" 
-}
-
-"#openTodo": {
-	 width:"30",
-	 height:"30",
+	right:"10",
+	image:"/open.png" 
 }

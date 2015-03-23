@@ -1,0 +1,21 @@
+<Alloy>
+	<Collection src='Project' />
+	<View id='firstWnd'>
+		<View id="controls">
+			<Button title="Add" onClick="openAddDialog" />
+		</View>
+	   <ListView defaultItemTemplate="projectItemTpl" onItemclick="showTodoList">
+	   	   <Templates>
+			   <ItemTemplate name="projectItemTpl" id="listProjectTpl">
+			     <View>
+			        <Label id="name" bindId="projectName" />  
+			        <ImageView />
+			     </View>
+			  </ItemTemplate>
+	   	   </Templates>
+          <ListSection dataCollection='Project'>
+             <ListItem itemId='{id}' projectName:text='{projectName}' />
+          </ListSection>
+       </ListView>
+   </View>
+</Alloy>

@@ -1,7 +1,10 @@
 var args = arguments[0] || {};
 
 if(!args.recordToEdit)
+{
+	$.descrField.backgroundColor = "#fff";
 	$.date.value = (new Date()).toString();
+}
 else {
 	$.descrField.value = args.recordToEdit.get('description');
 	$.descrField.backgroundColor = args.recordToEdit.get('color');
@@ -55,7 +58,7 @@ function saveRecord (e) {
 		else {
 			args.recordToEdit.save();
 			Alloy.Collections.Todo.getTodoForProject(args.recordToEdit.get("projectId"));
-			$.thirdWnd.close();
+			args.navigation.back();
 		}
 	} else {
 		var model = Alloy.createModel('Todo', {
@@ -71,7 +74,7 @@ function saveRecord (e) {
 		else {
 			model.save();
 			Alloy.Collections.Todo.getTodoForProject(args.projectId);
-			$.thirdWnd.close();
+			args.navigation.back();
 		}
 	}
 }
@@ -79,7 +82,7 @@ function saveRecord (e) {
 function removeRecord (e) {
 	if(args.recordToEdit) {
 		args.recordToEdit.destroy();
-		$.thirdWnd.close();
+		args.navigation.back();
 	}
 }
 

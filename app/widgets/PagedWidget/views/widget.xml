@@ -1,0 +1,19 @@
+<Alloy>
+	<View layout="vertical">
+		<View id="headerWrap" layout="vertical">
+			<View id="header" layout="horizontal">
+				<Label id="currentWindowTitle" width="Ti.UI.FILL" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" text="" />
+			</View>
+			<View id="iconWrap" layout="horizontal" width="Ti.UI.FILL">
+				<ImageView id="icon" image="/PagedWidget/back.png" visible="false" onClick="backButtonClick" />
+				<View width="Ti.UI.FILL">
+					<View width="Ti.UI.SIZE" right="0">
+						<View id="actionBarContainer" width="Ti.UI.SIZE" layout="horizontal"></View>
+					</View>
+				</View>
+			</View>
+		</View>
+		<View id="headerBorder"></View>
+		<View id="content"></View>
+	</View>
+</Alloy>

@@ -3,38 +3,11 @@
 }
 
 "#mainTab": {
-	icon:"Bug.png"
-}
-
-"#firstWnd": {
-	backgroundColor: "white"
-}
-
-"#wndTitle": {
-	width:"80%"
-}
-
-"#listProjectTpl": {
-	
-}
-
-"#name": {
-	color:"black",
-	width:"80%",
-	left:"15",
-	minimumFontSize:"1000dip",
-	ellipsize:"true"
-}
-
-"ImageView": {
-	width:"30",
-	height:"30",
-	right:"10",
-	image:"/open.png" 
+	icon: "Bug.png"
 }
 
 "#aboutTab": {
-	icon:"info.png"
+	icon: "info.png"
 }
 
 "#aboutWnd": {

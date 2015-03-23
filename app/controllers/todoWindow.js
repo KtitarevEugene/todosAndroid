@@ -1,21 +1,8 @@
 var args = arguments[0] || {};
 
-var activity = args.tabGroup.getActivity();
-activity.title = "TODOs";
-activity.onCreateOptionsMenu = function(e) {
-    var menuItem = e.menu.add({
-        title : "Edit",
-        showAsAction : Ti.Android.SHOW_AS_ACTION_ALWAYS
-    });
-    menuItem.addEventListener("click", function(e) {
-    	openEditDialog(e);
-    });
-};
-activity.invalidateOptionsMenu();
-
-
 var todos = Alloy.Collections.Todo;
 todos.getTodoForProject(args.projectId);
+
 function openEditDialog(e) {
 	var win = Ti.UI.createWindow({
 		backgroundColor: 'gray',
@@ -26,14 +13,17 @@ function openEditDialog(e) {
 	var form = Ti.UI.createView({
  		backgroundColor : 'black',
   		layout: 'vertical',
-  		height: 100,
+  		height: 150,
   		borderRadius: 10,
-  		bottom: -100,
+  		bottom: -150,
 	});
 	form.add(Alloy.createController('editProjectForm', {formWindow: win, removeProject: onRemoveProject, addTodo: onAddTodo}).getView());
 	win.add(form);
 	var matrix = Ti.UI.create2DMatrix();
-	matrix = matrix.translate(0, -100);
+	if(Ti.Platform.osname == "iphone")
+		matrix = matrix.translate(0, -400);
+	else
+		matrix = matrix.translate(0, -600);
 	var anime = Ti.UI.createAnimation({
     	transform : matrix,
     	duration : 300
@@ -45,14 +35,13 @@ function onRemoveProject () {
 	while(todos.models.length > 0)
 		todos.models[0].destroy();
 	args.projectsCollection.models[args.projectIndex].destroy();
-	$.secondWnd.close();
+	args.navigation.back();
 }
 
 function onAddTodo () {
-	args.tab.open(Alloy.createController('editTodoForm', {projectId: args.projectId}).getView());
+	args.navigation.openPage("", Alloy.createController('editTodoForm', {projectId: args.projectId, navigation: args.navigation}).getView());
 }
-
 function showEditTodoForm (e) {
 	var record = todos.get(e.itemId);
-	args.tab.open(Alloy.createController('editTodoForm', {recordToEdit: record}).getView());
+	args.navigation.openPage("", Alloy.createController('editTodoForm', {recordToEdit: record, navigation: args.navigation}).getView());
 }
