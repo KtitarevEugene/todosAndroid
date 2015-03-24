@@ -4,46 +4,50 @@
 			<Button id="idSave" title='Save' onClick="saveRecord" />
 			<Button id="idRemove" title='Remove' onClick="removeRecord" />
 		</View>
-        <TextArea id="descrField" />
-        <View id="content" layout="vertical">
-	        <View layout="horizontal">
-	        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Date</Label>
-		        <View class="textFieldView">
-		        	<TextField id="date" editable="false"/>
-	        	</View>
-	        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Type</Label>
-		        <View class="textFieldView">
-			        <Button id="type" title="Bug" onClick="showTypeOptionDialog" />
-	        	</View>
-	        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Status</Label>
-		        <View class="textFieldView">
-			        <Button id="status" title="New" onClick="showStatusOptionDialog" />
-	        	</View>
-		        <OptionDialog id="selectType" title="Select type" selectedIndex="0" onClick="setType">
-		            <Options>
-		                <Option>Bug</Option>
-		                <Option>Feature</Option>
-		            </Options>
-		            <ButtonNames>
-		                <ButtonName>OK</ButtonName>
-		            </ButtonNames>
-		        </OptionDialog>
-		        <OptionDialog id="selectStatus" title="Select status" selectedIndex="0" onClick="setStatus">
-		            <Options>
-		                <Option>New</Option>
-		                <Option>Fixed</Option>
-		            </Options>
-		            <ButtonNames>
-		                <ButtonName>OK</ButtonName>
-		            </ButtonNames>
-		        </OptionDialog>
-		    </View>
-    	</View>
-    	<View layout="horizontal" top="10" height="50" width="100%">
-    		<ImageView class="blank" id="whiteColor" onClick="setTodoColor" />
-    		<ImageView class="blank" id="yellowColor" onClick="setTodoColor" />
-    		<ImageView class="blank" id="redColor" onClick="setTodoColor" />
-    		<ImageView class="blank" id="blueColor" onClick="setTodoColor" />
-    	</View>
+		<ScrollView id="scroller">
+			<View id="scrollContent">
+		        <TextArea id="descrField" />
+		        <View id="content" layout="vertical">
+			        <View layout="horizontal">
+			        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Date</Label>
+				        <View class="textFieldView">
+				        	<TextField id="date" editable="false"/>
+			        	</View>
+			        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Type</Label>
+				        <View class="textFieldView">
+					        <Button id="type" title="Bug" onClick="showTypeOptionDialog" />
+			        	</View>
+			        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Status</Label>
+				        <View class="textFieldView">
+					        <Button id="status" title="New" onClick="showStatusOptionDialog" />
+			        	</View>
+				        <OptionDialog id="selectType" title="Select type" selectedIndex="0" onClick="setType">
+				            <Options>
+				                <Option>Bug</Option>
+				                <Option>Feature</Option>
+				            </Options>
+				            <ButtonNames>
+				                <ButtonName>OK</ButtonName>
+				            </ButtonNames>
+				        </OptionDialog>
+				        <OptionDialog id="selectStatus" title="Select status" selectedIndex="0" onClick="setStatus">
+				            <Options>
+				                <Option>New</Option>
+				                <Option>Fixed</Option>
+				            </Options>
+				            <ButtonNames>
+				                <ButtonName>OK</ButtonName>
+				            </ButtonNames>
+				        </OptionDialog>
+				    </View>
+		    	</View>
+		    	<View layout="horizontal" top="10" height="50" width="100%">
+		    		<ImageView class="blank" id="whiteColor" onClick="setTodoColor" />
+		    		<ImageView class="blank" id="yellowColor" onClick="setTodoColor" />
+		    		<ImageView class="blank" id="redColor" onClick="setTodoColor" />
+		    		<ImageView class="blank" id="blueColor" onClick="setTodoColor" />
+		    	</View>
+	    	</View>
+    	</ScrollView>
 	</View>
 </Alloy>

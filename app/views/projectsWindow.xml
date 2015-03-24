@@ -10,8 +10,8 @@
 			     <View id="tplContainer" layout="horizontal">
 			     	 <View id="tplContent">
 			        	<Label id="name" bindId="projectName" />
-			        	<ImageView />
-				    </View>
+			        	<!-- <ImageView /> -->				    
+			        </View>
 				    <View id="underline" />
 			     </View>
 			  </ItemTemplate>

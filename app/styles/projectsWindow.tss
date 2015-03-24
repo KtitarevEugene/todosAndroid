@@ -6,7 +6,7 @@
 	
 }
 
-"#projectsListView": {
+"#projectsListView[platform='ios']": {
 	separatorStyle: Titanium.UI.iPhone.ListViewSeparatorStyle.NONE
 }
 
@@ -20,8 +20,10 @@
 
 "#name": {
 	color:"black",
-	width:"80%",
+	width:Ti.UI.FILL,
+	right:17,
 	left:15,
+	wordWrap: "false",
 	minimumFontSize:"1000dip",
 	ellipsize:"true",
 	font:{
@@ -40,4 +42,8 @@
 	height:30,
 	right:10,
 	image:"/open.png" 
+}
+
+"ListItem": {
+	accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
 }

@@ -24,7 +24,8 @@
 	height: "50",
 	minimumFontSize:"1000dip",
 	left:"5",
-	right:"30",
+	right:"17",
+	wordWrap: "false",
 	ellipsize:"true",
 	font:{
 		fontSize: 22
@@ -43,4 +44,7 @@
 	 width:"30",
 	 height:"30",
 	 right:"5"
+}
+"ListItem": {
+	accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
 }

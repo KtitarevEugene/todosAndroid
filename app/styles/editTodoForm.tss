@@ -2,6 +2,16 @@
 	 backgroundColor:"#C6E2FF"  
 }
 
+"#scrollContent": {
+	layout: "vertical"
+}
+
+"#scroller": {
+	showVerticalScrollIndicator: "true",
+	contentWidth: "auto",
+	contentHeight: "auto"
+}
+
 "#descrField": {
 	borderRadius:"8",
 	color:"#fff",

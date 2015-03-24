@@ -10,11 +10,11 @@
 			     <View id="tplContainer" bindId="background" layout="horizontal">
 			        <ImageView id="typeTodo" bindId="todoType" />
 			        <View id="textFrame" width="Ti.UI.FILL">
-			        	<Label id="descrTpl" wordWrap="false" bindId="todoDescription" />  
-				        <View id="iconFrame">
+			        	<Label id="descrTpl" bindId="todoDescription" />  
+				        <!-- <View id="iconFrame">
 					        <ImageView id="openTodo" image="open.png" />
-				        </View>
-			        </View>
+				        </View> -->
+				    </View>
 			     </View>
 			  </ItemTemplate>
 	   	   </Templates>
