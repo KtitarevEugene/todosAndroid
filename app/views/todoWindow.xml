@@ -2,7 +2,7 @@
 	<Collection src='Todo' />
 	<View id='secondWnd'>
 		<View id="controls">
-			<Button title="Edit" onClick="openEditDialog" />
+			<Button id="rightNavButton" title="Edit" onClick="openEditDialog" />
 		</View>
 	   <ListView defaultItemTemplate="todoItemTpl" onItemclick="showEditTodoForm">
 	   	   <Templates>

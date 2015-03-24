@@ -3,6 +3,8 @@ var args = arguments[0] || {};
 var todos = Alloy.Collections.Todo;
 todos.getTodoForProject(args.projectId);
 
+exports.rightNavButtons = [$.rightNavButton];
+
 function openEditDialog(e) {
 	var win = Ti.UI.createWindow({
 		backgroundColor: 'gray',
@@ -13,9 +15,9 @@ function openEditDialog(e) {
 	var form = Ti.UI.createView({
  		backgroundColor : 'black',
   		layout: 'vertical',
-  		height: 150,
+  		height: (OS_ANDROID) ? 150 : 100,
   		borderRadius: 10,
-  		bottom: -150,
+  		bottom: (OS_ANDROID) ? -150 : -100,
 	});
 	form.add(Alloy.createController('editProjectForm', {formWindow: win, removeProject: onRemoveProject, addTodo: onAddTodo}).getView());
 	win.add(form);
@@ -35,13 +37,45 @@ function onRemoveProject () {
 	while(todos.models.length > 0)
 		todos.models[0].destroy();
 	args.projectsCollection.models[args.projectIndex].destroy();
-	args.navigation.back();
+	if(OS_ANDROID) {
+		args.navigation.back();
+	} else {
+		args.currentWindow.close();		
+	}
 }
 
 function onAddTodo () {
-	args.navigation.openPage("", Alloy.createController('editTodoForm', {projectId: args.projectId, navigation: args.navigation}).getView());
+	if(OS_ANDROID) {
+		args.navigation.openPage("", Alloy.createController('editTodoForm', {projectId: args.projectId, navigation: args.navigation}).getView());
+	} else {
+		var window = Ti.UI.createWindow();
+		var controller = Alloy.createController('editTodoForm', {projectId: args.projectId, currentWindow: window, tab: args.tab});
+		var view = controller.getView();
+		var rightNavView = [];
+		for(var index in controller.rightNavButtons) {
+			rightNavView.push(controller.rightNavButtons[index]);
+		}
+		view.remove(view.children[0]);
+		window.add(controller.getView());
+		window.rightNavButtons = rightNavView;	
+		args.tab.open(window);		
+	}
 }
 function showEditTodoForm (e) {
 	var record = todos.get(e.itemId);
-	args.navigation.openPage("", Alloy.createController('editTodoForm', {recordToEdit: record, navigation: args.navigation}).getView());
+	if(OS_ANDROID) {
+		args.navigation.openPage("", Alloy.createController('editTodoForm', {recordToEdit: record, navigation: args.navigation}).getView());
+	} else {
+		var window = Ti.UI.createWindow();
+		var controller = Alloy.createController('editTodoForm', {recordToEdit: record, currentWindow: window, tab: args.tab});
+		var view = controller.getView();
+		var rightNavView = [];
+		for(var index in controller.rightNavButtons) {
+			rightNavView.push(controller.rightNavButtons[index]);
+		}
+		view.remove(view.children[0]);
+		window.add(controller.getView());
+		window.rightNavButtons = rightNavView;	
+		args.tab.open(window);
+	}
 }

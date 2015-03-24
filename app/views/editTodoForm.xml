@@ -1,8 +1,8 @@
 <Alloy>
 	<View id="thirdWnd" layout="vertical">
 		<View id="controls">
-			<Button title='Save' onClick="saveRecord" />
-			<Button title='Remove' onClick="removeRecord" />
+			<Button id="idSave" title='Save' onClick="saveRecord" />
+			<Button id="idRemove" title='Remove' onClick="removeRecord" />
 		</View>
         <TextArea id="descrField" />
         <View id="content" layout="vertical">

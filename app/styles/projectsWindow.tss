@@ -6,20 +6,38 @@
 	
 }
 
+"#projectsListView": {
+	separatorStyle: Titanium.UI.iPhone.ListViewSeparatorStyle.NONE
+}
+
+"#tplContainer": {
+	height:50
+}
+
+"#tplContent":{
+	height:49,
+}
+
 "#name": {
 	color:"black",
 	width:"80%",
-	left:"15",
+	left:15,
 	minimumFontSize:"1000dip",
 	ellipsize:"true",
 	font:{
-		fontSize: 20
+		fontSize: 22
 	}
 }
 
+"#underline": {
+	top:-2,
+	height:"1",
+	backgroundColor: "#DCDCDC"
+}
+
 "ImageView": {
-	width:"30",
-	height:"30",
-	right:"10",
+	width:30,
+	height:30,
+	right:10,
 	image:"/open.png" 
 }

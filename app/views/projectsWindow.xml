@@ -2,14 +2,17 @@
 	<Collection src='Project' />
 	<View id='firstWnd'>
 		<View id="controls">
-			<Button title="Add" onClick="openAddDialog" />
+			<Button id="rightNavButton" title="Add" onClick="openAddDialog" />
 		</View>
-	   <ListView defaultItemTemplate="projectItemTpl" onItemclick="showTodoList">
+	   <ListView id="projectsListView" defaultItemTemplate="projectItemTpl" onItemclick="showTodoList">
 	   	   <Templates>
 			   <ItemTemplate name="projectItemTpl" id="listProjectTpl">
-			     <View>
-			        <Label id="name" bindId="projectName" />  
-			        <ImageView />
+			     <View id="tplContainer" layout="horizontal">
+			     	 <View id="tplContent">
+			        	<Label id="name" bindId="projectName" />
+			        	<ImageView />
+				    </View>
+				    <View id="underline" />
 			     </View>
 			  </ItemTemplate>
 	   	   </Templates>

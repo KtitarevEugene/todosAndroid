@@ -1,3 +1,5 @@
+var platformWidth = (Ti.Platform.osname == "android") ? Ti.Platform.DisplayCaps().displayCaps.platformWidth : Ti.Platform.displayCaps.platformWidth;
+
 var backButtonHandler = function(e) {
 	if(stack[stack.length - 1] && stack[stack.length - 2])
 	{
@@ -7,8 +9,10 @@ var backButtonHandler = function(e) {
 		var openingViewMatrix = Ti.UI.create2DMatrix();
 		openingViewMatrix = openingViewMatrix.scale(1, 1);
 		
+		
+		
 		var hidingViewMatrix = Ti.UI.create2DMatrix();
-		hidingViewMatrix = hidingViewMatrix.translate(Ti.Platform.DisplayCaps().displayCaps.platformWidth * 0.8, 0);
+		hidingViewMatrix = hidingViewMatrix.translate(platformWidth * 0.8, 0);
 		
 		var openAnimation = Ti.UI.createAnimation({
 			transform: openingViewMatrix,
@@ -75,7 +79,7 @@ exports.openPage = function (title, view) {
 			}
 	
 		var openingViewMatrix = Ti.UI.create2DMatrix();
-		openingViewMatrix = openingViewMatrix.translate(-Ti.Platform.DisplayCaps().displayCaps.platformWidth * 0.8, 0);
+		openingViewMatrix = openingViewMatrix.translate(-platformWidth * 0.8, 0);
 		
 		var hidingViewMatrix = Ti.UI.create2DMatrix();
 		hidingViewMatrix = hidingViewMatrix.scale(0.5, 0.5);
@@ -115,8 +119,8 @@ exports.openPage = function (title, view) {
 		var leftPos = view.getLeft();
 		var rightPos = view.getRight();
 		
-		view.setLeft(Ti.Platform.DisplayCaps().displayCaps.platformWidth * 0.4);
-		view.setRight(-Ti.Platform.DisplayCaps().displayCaps.platformWidth * 0.4);
+		view.setLeft(platformWidth * 0.4);
+		view.setRight(-platformWidth * 0.4);
 		hidingView.animate(hideAnimation);
 		view.animate(openAnimation);
 	}

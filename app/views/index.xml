@@ -1,7 +1,7 @@
 <Alloy>
 	<TabGroup id='tabGroup'>
 		<Tab id='mainTab' title='TODOs'>
-			<Window>			   
+			<Window platform='android'>
 				<Widget id="navigationView" src="PagedWidget"></Widget>
 		   </Window>
 		</Tab>
