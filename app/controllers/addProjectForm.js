@@ -4,7 +4,7 @@ function hideForm (e) {
 	args.formWindow.close();
 }
 
-function addProject (e){
+function addProject (e) {
 	var projectNameText = $.projectNameField.getValue();
 	if(!projectNameText)
 	{

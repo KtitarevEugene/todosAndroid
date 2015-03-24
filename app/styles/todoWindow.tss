@@ -6,32 +6,40 @@
 	
 }
 
+"#tplContainer": {
+	height: "50"
+}
+
 "#textFrame": {
-	width: "95%"
+	right:"0"
 }
 
 "#iconFrame": {
-	
+	right:"0",
+	width:"30"
 }
 
 "#descrTpl": {
 	color:"black",
-	height: "30",
+	height: "50",
 	minimumFontSize:"1000dip",
 	left:"5",
+	right:"30",
 	ellipsize:"true",
 	font:{
-		fontSize: 20
+		fontSize: 22
 	}
 }
 
 "#typeTodo": {
+	top:"10",
 	width:"30",
 	height:"30",
 	left:"10" 
 }
 
 "#openTodo": {
+	 top:"10",
 	 width:"30",
 	 height:"30",
 	 right:"5"
