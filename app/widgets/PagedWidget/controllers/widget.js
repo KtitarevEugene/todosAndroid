@@ -1,8 +1,43 @@
 var platformWidth = (OS_ANDROID) ? Ti.Platform.DisplayCaps().displayCaps.platformWidth : Ti.Platform.displayCaps.platformWidth;
 
+exports.addEventListener = $.widget.addEventListener;
+
+exports.on = function(type, handler) {
+	return $.widget.addEventListener(type, handler);
+};
+
+exports.off = function(type, handler) {
+	return $.widget.removeEventListener(type, handler);
+};
+ 
+exports.bind = function(type, handler) {
+	return $.widget.addEventListener(type, handler);
+};
+
+exports.unbind = function(type, handler) {
+	return $.widget.removeEventListener(type, handler);
+}; 
+
+exports.addEventListener = function(type, handler) {
+	return $.widget.addEventListener(type, handler);
+};
+exports.removeEventListener = function(type, handler) {
+	return $.widget.removeEventListener(type, handler);
+};
+ 
+exports.trigger = function(type, event) {
+	return $.widget.trigger(type, event);
+};
+exports.fireEvent = function(type, event) {
+	return $.widget.fireEvent(type, event);
+};
+
+exports._hasListenersForEventType = function(name, flag) {
+    return $.widget._hasListenersForEventType(name, flag);
+};
+
 var backButtonHandler = function(e) {
-	if(stack[stack.length - 1] && stack[stack.length - 2])
-	{
+	if(stack[stack.length - 1] && stack[stack.length - 2]) {
 		var hidingView = stack[stack.length - 1].component;
 		var openingView = stack[stack.length - 2].component;
 	
@@ -38,11 +73,29 @@ var backButtonHandler = function(e) {
 			if(stack.length < 2)
 				$.icon.visible = false;
 			isInAction = false;
+			
+			$.widget.fireEvent('back', {
+				type: "click",
+				source: $.widget,
+				title: stack[stack.length - 1].windowTitle,
+				pageNumber: stack.length,
+				pageView: openingView,
+				actionBarElements: stack[stack.length - 1].actionBarElements
+			});
 		});
 		
 		openingView.show();
 		openingView.animate(openAnimation);
 		hidingView.animate(hideAnimation);
+	} else {
+		$.widget.fireEvent('back', {
+			type: "click",
+			source: $.widget,
+			title: null,
+			pageNumber: 0,
+			pageView: null,
+			actionBarElements: null
+		});
 	}
 };
 

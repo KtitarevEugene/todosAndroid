@@ -1,6 +1,25 @@
 var tabgroup = $.tabGroup;
 
 if(OS_ANDROID) {
+	tabgroup.addEventListener('androidback', function(e) {
+		switch(tabgroup.activeTab.id) {
+			case "mainTab": {
+				$.navigationView.back();
+				break;
+			}
+			case "aboutTab": {
+				tabgroup.close();
+			}
+		}
+	});
+		
+	$.navigationView.addEventListener('back', function(e) {
+		if(!e.pageNumber)
+			tabgroup.close();
+	});
+}
+
+if(OS_ANDROID) {
 	$.navigationView.setTitleBarGradient({
         type: 'linear',
         startPoint: { x: '50%', y: '0%' },
