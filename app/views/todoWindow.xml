@@ -19,7 +19,7 @@
 			  </ItemTemplate>
 	   	   </Templates>
   	      <ListSection dataCollection='Todo'>
-	         <ListItem itemId='{id}' background:backgroundColor="{color}" todoType:image="{type}" todoDescription:text='{description}' />
+	         <ListItem itemId='{id}' backgroundColor="{color}" todoType:image="{type}" todoDescription:text='{description}' />
 	      </ListSection>
 	   </ListView>
 	</View>
