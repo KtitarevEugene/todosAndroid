@@ -1,6 +1,12 @@
 var tabgroup = $.tabGroup;
 
 if(OS_ANDROID) {
+	$.navigationView.setTitleBarGradient({
+        type: 'linear',
+        startPoint: { x: '50%', y: '0%' },
+        endPoint: { x: '50%', y: '100%' },
+        colors: [ { color: '#458bbd', offset: 0.0}, { color: '#a1cbe9', offset: 1.0 } ],
+   	});
 	$.navigationView.setFirstPage("Projects", Alloy.createController("projectsWindow", {navigation: $.navigationView}).getView());
 } else {
 	var window = Ti.UI.createWindow({

@@ -63,6 +63,14 @@ exports.back = function() {
 		backButtonHandler();	
 };
 
+exports.setTitleBarBackgroundColor = function(color) {
+	$.header.backgroundColor = color;
+};
+
+exports.setTitleBarGradient = function(gradient) {
+	$.header.backgroundGradient = gradient;
+};
+
 exports.openPage = function (title, view) {
 	if(!isInAction)
 	{
