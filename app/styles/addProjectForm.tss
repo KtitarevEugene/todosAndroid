@@ -3,19 +3,22 @@
 }
 
 "Label": {
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	color: 'white',
 	width: "100%",
-	top: "10"
+	top: 10
 }
 
 "#projectNameField": {
+	 borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	 backgroundColor:"white",
-	 top:"10",
+	 color: "black",
+	 top: 10,
 	 width:"90%",
 	 hintText:"Project Name"
 }
 
 "Button": {
 	width:"90%",
-	top:"10"
+	top: 10
 }

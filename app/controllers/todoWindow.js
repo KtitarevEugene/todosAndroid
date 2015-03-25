@@ -6,11 +6,12 @@ todos.getTodoForProject(args.projectId);
 exports.rightNavButtons = [$.rightNavButton];
 
 function openEditDialog(e) {
+	var platformHeight = (OS_ANDROID) ? Ti.Platform.DisplayCaps().displayCaps.platformHeight : Ti.Platform.displayCaps.platformHeight;
 	var win = Ti.UI.createWindow({
 		backgroundColor: 'gray',
-	    fullscreen: true,
-	    navBarHidden: false,
-	    opacity : 0.70
+	    fullscreen: false,
+	    opacity : 0.70,
+	    theme: "Theme.Titanium",
 	});
 	var form = Ti.UI.createView({
  		backgroundColor : 'black',
@@ -22,10 +23,7 @@ function openEditDialog(e) {
 	form.add(Alloy.createController('editProjectForm', {formWindow: win, removeProject: onRemoveProject, addTodo: onAddTodo}).getView());
 	win.add(form);
 	var matrix = Ti.UI.create2DMatrix();
-	if(Ti.Platform.osname == "iphone")
-		matrix = matrix.translate(0, -400);
-	else
-		matrix = matrix.translate(0, -600);
+	matrix = matrix.translate(0, -platformHeight / 2 - form.height / 2);
 	var anime = Ti.UI.createAnimation({
     	transform : matrix,
     	duration : 300

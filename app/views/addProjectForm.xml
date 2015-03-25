@@ -1,9 +1,9 @@
 <Alloy>
 	<View layout="vertical">
-		<Label textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">
+		<Label>
 			Enter new project name
         </Label>
-		<TextField id="projectNameField" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" />
+		<TextField id="projectNameField" />
 		<Button title="Create" onClick="addProject" />
 		<Button title="Cancel" onClick="hideForm" />
 	</View>

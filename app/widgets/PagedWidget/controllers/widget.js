@@ -1,4 +1,4 @@
-var platformWidth = (Ti.Platform.osname == "android") ? Ti.Platform.DisplayCaps().displayCaps.platformWidth : Ti.Platform.displayCaps.platformWidth;
+var platformWidth = (OS_ANDROID) ? Ti.Platform.DisplayCaps().displayCaps.platformWidth : Ti.Platform.displayCaps.platformWidth;
 
 var backButtonHandler = function(e) {
 	if(stack[stack.length - 1] && stack[stack.length - 2])

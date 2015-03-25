@@ -10,12 +10,13 @@ var editButton = Ti.UI.createButton({
 exports.rightNavButtons = [$.rightNavButton];
 
 function openAddDialog(e) {
+	var platformHeight = (OS_ANDROID) ? Ti.Platform.DisplayCaps().displayCaps.platformHeight : Ti.Platform.displayCaps.platformHeight;
 	var win = Ti.UI.createWindow({
 		backgroundColor: 'gray',
-	    fullscreen: true,
-	    navBarHidden: false,
+	    fullscreen: false,
 	    opacity : 0.70,
-	    id: 'projectFormWindow'
+	    id: 'projectFormWindow',
+	    theme: "Theme.Titanium",
 	});
 	var form = Ti.UI.createView({
  		backgroundColor : 'black',
@@ -27,10 +28,7 @@ function openAddDialog(e) {
 	form.add(Alloy.createController('addProjectForm', {formWindow: win}).getView());
 	win.add(form);
 	var matrix = Ti.UI.create2DMatrix();
-	if(Ti.Platform.osname == "iphone")
-		matrix = matrix.translate(0, -400);
-	else
-		matrix = matrix.translate(0, -600);
+	matrix = matrix.translate(0, -platformHeight / 2 - form.height / 2);
 	var a = Ti.UI.createAnimation({
     	transform : matrix,
     	duration : 300
