@@ -17,6 +17,11 @@ if(OS_ANDROID) {
 		if(!e.pageNumber)
 			tabgroup.close();
 	});
+	
+	$.navigationView.addEventListener('swipe', function(e) {
+		if(e.direction == 'right')
+			$.navigationView.back();
+	});
 }
 
 if(OS_ANDROID) {
