@@ -13,32 +13,41 @@ else {
 	$.date.value = args.recordToEdit.get('date');
 	$.type.title = args.recordToEdit.get('type');
 	$.status.title = args.recordToEdit.get('status');
-	if(args.recordToEdit.get('type') == "Bug")
-		$.selectStatus.setOptions(['New', 'Fixed']);
-	else
-		$.selectStatus.setOptions(['New', 'Implemented']);
 }
 
 function showTypeOptionDialog (e) {
-	$.selectType.show();
+	var dialog = Ti.UI.createOptionDialog({
+			title: "Select type",
+			options: ['Bug', 'Feature'],
+			buttonNames: ['OK'],
+			selectedIndex: ($.type.title == "Bug") ? 0 : 1
+		});
+	dialog.addEventListener("click", setType);
+	dialog.show();
 }
 
 function showStatusOptionDialog (e) {
-	$.selectStatus.show();
+	var dialog = Ti.UI.createOptionDialog({
+			title: "Select status",
+			options: ['New', (($.type.title == "Bug") ? 'Fixed': 'Implemented')],
+			buttonNames: ['OK'],
+			selectedIndex: ($.status.title == "New") ? 0 : 1
+		});
+	dialog.addEventListener("click", setStatus);
+	dialog.show();
 }
 
 function setType (e) {
-	var index = $.selectStatus.selectedIndex;
-	if(e.index == 0)
-		$.selectStatus.setOptions(['New', 'Fixed']);
-	else
-		$.selectStatus.setOptions(['New', 'Implemented']);
-	$.status.title = $.selectStatus.options[0];
-	$.type.title = $.selectType.options[e.index];
+	if(!e.button) {
+		$.type.title = e.source.options[e.index];
+		$.status.title = "New";
+	}
 }
 
 function setStatus (e) {
-	$.status.title = $.selectStatus.options[e.index];
+	if(!e.button) {
+		$.status.title = e.source.options[e.index];
+	}
 }
 
 function saveRecord (e) {

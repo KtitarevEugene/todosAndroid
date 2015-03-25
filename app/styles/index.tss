@@ -16,7 +16,7 @@
         type: 'linear',
         startPoint: { x: '50%', y: '0%' },
         endPoint: { x: '50%', y: '100%' },
-        colors: [ { color: 'a1cbe9', offset: 0.0}, { color: '458bbd', offset: 1.0 } ],
+        colors: [ { color: '#a1cbe9', offset: 0.0}, { color: '#458bbd', offset: 1.0 } ],
     }
 }
 

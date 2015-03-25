@@ -2,11 +2,11 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.ktitarev.todos</id>
     <name>TODOs</name>
-    <version>1.0</version>
-    <publisher>ektitarev</publisher>
-    <url>http://</url>
-    <description>undefined</description>
-    <copyright>2015 by ektitarev</copyright>
+    <version>2.1.0</version>
+    <publisher>E. Ktitarev</publisher>
+    <url>http://www.smartru.com</url>
+    <description>TODOs Application v2.1.0</description>
+    <copyright>2015 by E. Ktitarev</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -40,11 +40,10 @@
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android"/>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-    	<manifest>
-        	<application android:theme="@style/Theme.NoActionBar"/>
-    	</manifest>
-	</android>
-
+        <manifest>
+            <application android:theme="@style/Theme.NoActionBar"/>
+        </manifest>
+    </android>
     <mobileweb>
         <precache/>
         <splash>

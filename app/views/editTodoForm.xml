@@ -21,24 +21,6 @@
 				        <View class="textFieldView">
 					        <Button id="status" title="New" onClick="showStatusOptionDialog" />
 			        	</View>
-				        <OptionDialog id="selectType" title="Select type" selectedIndex="0" onClick="setType">
-				            <Options>
-				                <Option>Bug</Option>
-				                <Option>Feature</Option>
-				            </Options>
-				            <ButtonNames>
-				                <ButtonName>OK</ButtonName>
-				            </ButtonNames>
-				        </OptionDialog>
-				        <OptionDialog id="selectStatus" title="Select status" selectedIndex="0" onClick="setStatus">
-				            <Options>
-				                <Option>New</Option>
-				                <Option>Fixed</Option>
-				            </Options>
-				            <ButtonNames>
-				                <ButtonName>OK</ButtonName>
-				            </ButtonNames>
-				        </OptionDialog>
 				    </View>
 		    	</View>
 		    	<View id="centerAligner">
