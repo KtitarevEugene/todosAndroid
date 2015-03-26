@@ -11,6 +11,7 @@
 }
 
 "#tplContainer": {
+	layout: "horizontal",
 	height:50
 }
 

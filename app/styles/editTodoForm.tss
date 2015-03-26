@@ -1,5 +1,6 @@
 "#thirdWnd": {
-	 backgroundColor:"#C6E2FF"  
+	layout: "vertical",
+	backgroundColor:"#C6E2FF"
 }
 
 "#scrollContent": {
@@ -26,43 +27,53 @@
 }
 
 "#descrField": {
-	borderRadius:"8",
+	borderRadius:8,
 	color:"#fff",
 	textAlign:"left",
 	color:"black",
 	width:"95%",
-	height:"100",
-	maxLength:"255",
-	top:"10",
+	height:100,
+	maxLength:255,
+	top: 10,
 	hintText:"Description"
 }
 
 ".label": {
 	color:"black",
 	width:"30%",
-	height:"50",
-	backgroundColor:"#DCDCDC"
+	height:50,
+	backgroundColor:"#DCDCDC",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	font: {
+		fontSize: 18
+	}
 }
 
 "#content": {
-	top:"10",
+	layout: "vertical",
+	top:10,
 	backgroundColor:"#fff",
 	width:"95%",
-	borderRadius:"8",
-	height:"150"
+	borderRadius:8,
+	height:150
+}
+
+"#subContent": {
+	layout: "horizontal"
 }
 
 ".textFieldView": {
 	width:"70%",
 	backgroundColor:"#fff",
-	height:"50",
-	borderWidth:"1",
+	height: 50,
+	borderWidth: 1,
 	borderColor:"#DCDCDC"
 }
 
 "#date": {
 	color: "#000",
-	width:"95%"
+	width:"95%",
+	 editable: false
 }
 
 "#type": {
@@ -71,14 +82,6 @@
 
 "#status": {
 	width:"60%"
-}
-
-"#selectType": {
-	
-}
-
-"#selectStatus": {
-	
 }
 
 ".firstBlank": {

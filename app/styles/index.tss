@@ -11,6 +11,7 @@
 }
 
 "#aboutWnd": {
+	layout: "vertical",
 	backgroundColor:"white",
 	backgroundGradient: {
         type: 'linear',
@@ -20,25 +21,33 @@
     }
 }
 
+"#aboutContent": {
+	layout: "vertical",
+	top: "35%"
+}
+
 "#app": {
 	color: "#fff",
 	shadowColor:'#000',
     shadowOffset:{x:0,y:1},
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	font:{fontSize:24,fontFamily:'Lucida Grande-Bold'},
 }
 
 "#version": {
 	color: "#fff",
 	shadowColor:'#000',
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	shadowOffset:{x:0,y:1},
 }
 
 "#site": {
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	color: "#000",
 }
 
 "#underline": {
-	height:"1",
+	height: 1,
 	backgroundColor: "#000",
 	width:"140"
 }

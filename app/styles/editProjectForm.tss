@@ -1,3 +1,6 @@
+".container" : {
+	 layout: "vertical"
+}
 "Button" : {
 	width:"90%"
 }

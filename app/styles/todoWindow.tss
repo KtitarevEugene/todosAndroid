@@ -2,49 +2,59 @@
 	backgroundColor: "white"
 }
 
+"#controls": {
+	
+}
+
 "#listTodoTpl": {
 	
 }
 
+"#rightNavButton": {
+	
+}
+
 "#tplContainer": {
-	height: "50"
+	height: 50
 }
 
 "#textFrame": {
-	right:"0"
+	width: Ti.UI.FILL,
+	right: 0
 }
 
-"#iconFrame": {
-	right:"0",
-	width:"30"
-}
+/*"#iconFrame": {
+	right: 0,
+	width: 30
+}*/
 
 "#descrTpl": {
 	color:"black",
-	height: "50",
+	height: 50,
 	minimumFontSize:"1000dip",
-	left:"5",
-	right:"17",
+	left: 5,
+	right: 17,
 	wordWrap: "false",
-	ellipsize:"true",
+	ellipsize: "true",
 	font:{
 		fontSize: 22
 	}
 }
 
 "#typeTodo": {
-	top:"10",
-	width:"30",
-	height:"30",
-	left:"10" 
+	top: 10,
+	width: 30,
+	height: 30,
+	left: 10
 }
 
-"#openTodo": {
-	 top:"10",
-	 width:"30",
-	 height:"30",
-	 right:"5"
-}
+/*"#openTodo": {
+	 top: 10,
+	 width: 30,
+	 height: 30,
+	 right: 5
+}*/
+
 "ListItem": {
 	accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE
 }

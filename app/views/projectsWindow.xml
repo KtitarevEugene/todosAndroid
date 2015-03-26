@@ -7,7 +7,7 @@
 	   <ListView id="projectsListView" defaultItemTemplate="projectItemTpl" onItemclick="showTodoList">
 	   	   <Templates>
 			   <ItemTemplate name="projectItemTpl" id="listProjectTpl">
-			     <View id="tplContainer" layout="horizontal">
+			     <View id="tplContainer">
 			     	 <View id="tplContent">
 			        	<Label id="name" bindId="projectName" />
 			        	<!-- <ImageView /> -->				    

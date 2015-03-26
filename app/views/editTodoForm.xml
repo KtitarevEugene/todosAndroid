@@ -1,5 +1,5 @@
 <Alloy>
-	<View id="thirdWnd" layout="vertical">
+	<View id="thirdWnd">
 		<View id="controls">
 			<Button id="idSave" title='Save' onClick="saveRecord" />
 			<Button id="idRemove" title='Remove' onClick="removeRecord" />
@@ -7,17 +7,17 @@
 		<ScrollView id="scroller">
 			<View id="scrollContent">
 		        <TextArea id="descrField" />
-		        <View id="content" layout="vertical">
-			        <View layout="horizontal">
-			        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Date</Label>
+		        <View id="content">
+			        <View id="subContent">
+			        	<Label class="label">Date</Label>
 				        <View class="textFieldView">
-				        	<TextField id="date" editable="false"/>
+				        	<TextField id="date" />
 			        	</View>
-			        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Type</Label>
+			        	<Label class="label">Type</Label>
 				        <View class="textFieldView">
 					        <Button id="type" title="Bug" onClick="showTypeOptionDialog" />
 			        	</View>
-			        	<Label class="label" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER">Status</Label>
+			        	<Label class="label">Status</Label>
 				        <View class="textFieldView">
 					        <Button id="status" title="New" onClick="showStatusOptionDialog" />
 			        	</View>

@@ -1,5 +1,5 @@
 <Alloy>
-	<View class="container" layout="vertical">
+	<View class="container">
 		<Button title="Remove Project" onClick="removeProject" />
 		<Button title="Add TODO" onClick="addTodo" />
 		<Button title="Cancel" onClick="hideForm" />

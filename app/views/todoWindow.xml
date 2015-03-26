@@ -9,7 +9,7 @@
 			   <ItemTemplate name="todoItemTpl" id="listTodoTpl">
 			     <View id="tplContainer" bindId="background" layout="horizontal">
 			        <ImageView id="typeTodo" bindId="todoType" />
-			        <View id="textFrame" width="Ti.UI.FILL">
+			        <View id="textFrame">
 			        	<Label id="descrTpl" bindId="todoDescription" />  
 				        <!-- <View id="iconFrame">
 					        <ImageView id="openTodo" image="open.png" />
