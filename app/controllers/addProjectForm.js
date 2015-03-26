@@ -6,9 +6,11 @@ function hideForm (e) {
 
 function addProject (e) {
 	var projectNameText = $.projectNameField.getValue();
-	if(!projectNameText)
-	{
-		Ti.UI.createAlertDialog({message: 'Please enter new project name.'}).show();
+	if(!projectNameText) {
+		Ti.UI.createAlertDialog({message: 'Please enter new project name.',
+								ok: "OK",
+								okid: 1,
+								}).show();
 		return;
 	}
 	Alloy.createModel('Project', {

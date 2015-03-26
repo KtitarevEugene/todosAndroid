@@ -17,13 +17,12 @@ exports.definition = {
 			idAttribute: "id",
 			remoteBackup: false
 		}
-
 	},
 	extendModel: function(Model) {
 		_.extend(Model.prototype, {
             validate: function(attrs, options) {
                 if (!attrs.description || attrs.description.length <= 0) {
-                    return "Error: No description!";
+                    return "Please, enter description.";
                 } 
             }
         });

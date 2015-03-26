@@ -9,7 +9,8 @@
 "#scroller": {
 	showVerticalScrollIndicator: "true",
 	contentWidth: "auto",
-	contentHeight: "auto"
+	contentHeight: "auto",
+	scrollType:"vertical"
 }
 
 "#centerAligner": {

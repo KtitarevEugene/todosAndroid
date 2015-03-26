@@ -2,8 +2,7 @@ var args = arguments[0] || {};
 
 exports.rightNavButtons = [$.idSave, $.idRemove];
 
-if(!args.recordToEdit)
-{
+if(!args.recordToEdit) {
 	$.descrField.backgroundColor = "#fff";
 	$.date.value = (new Date()).toString();
 }
@@ -51,22 +50,23 @@ function setStatus (e) {
 }
 
 function saveRecord (e) {
+	var isValid = true;
 	if(args.recordToEdit) {
-		/*args.recordToEdit.on('error', function(model, error) {
+		args.recordToEdit.on('error', function(model, error) {
 			console.log("error");
 		});
-		args.recordToEdit.on('valid', function(model, error) {
-			console.log("success");
-		});*/
 		args.recordToEdit.set({
 			description: $.descrField.value,
 			type: $.type.title,
 			status: $.status.title,
 			color: ($.status.title == "Fixed" || $.status.title == "Implemented") ? '#90ee90' : $.descrField.backgroundColor
+		}, {
+			error: function(model, error) {
+				isValid = false;
+				Ti.UI.createAlertDialog({message: error, ok: "OK", okid: 1}).show();
+			}
 		});
-		if(!args.recordToEdit.isValid())
-			Ti.UI.createAlertDialog({message: args.recordToEdit.validationError}).show();
-		else {
+		if(isValid) {
 			args.recordToEdit.save();
 			Alloy.Collections.Todo.getTodoForProject(args.recordToEdit.get("projectId"));
 			if(OS_ANDROID) {
@@ -84,9 +84,12 @@ function saveRecord (e) {
 			status: $.status.title,
 			color: ($.status.title == "Fixed" || $.status.title == "Implemented") ? '#90ee90' : $.descrField.backgroundColor
 		});
-		if(!model.isValid())
-			Ti.UI.createAlertDialog({message: model.error}).show();
-		else {
+		if(!model.isValid()) {
+			Ti.UI.createAlertDialog({message: "Please, enter description.",
+									ok: "OK",
+									okid: 1,
+									}).show();
+		} else {
 			model.save();
 			Alloy.Collections.Todo.getTodoForProject(args.projectId);
 			if(OS_ANDROID) {
@@ -110,8 +113,7 @@ function removeRecord (e) {
 }
 
 function setTodoColor (e) {
-	switch(e.source.id)
-	{
+	switch(e.source.id)	{
 		case 'whiteColor': {
 			$.descrField.backgroundColor = "#fff";
 			break;

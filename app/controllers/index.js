@@ -39,7 +39,6 @@ if(OS_ANDROID) {
 	var controller = Alloy.createController("projectsWindow", {tab: $.mainTab});
 	var view = controller.getView();
 	var rightNavView = [];
-	console.log(controller.rightNavButtons);
 	for(var index in controller.rightNavButtons) {
 		rightNavView.push(controller.rightNavButtons[index]);
 	}
